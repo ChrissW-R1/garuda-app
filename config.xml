@@ -9,7 +9,8 @@
 	<plugin name="cordova-plugin-whitelist" spec="1" />
 	<access origin="*" />
 
-	<preference name="IconSource" value="www/img/logo/garuda.svg"/>
-	<preference name="IconBackgroundColor" value="#eeeeee"/>
-	<hook type="after_prepare" src="node_modules/generate-cordova-assets/hook.js"/>
+	<preference name="Orientation" value="portrait" />
+	<preference name="IconSource" value="www/images/logo/garuda.svg" />
+	<preference name="IconBackgroundColor" value="#eeeeee" />
+	<hook type="after_prepare" src="node_modules/generate-cordova-assets/hook.js" />
 </widget>

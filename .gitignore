@@ -51,6 +51,4 @@ gen/
 platforms/
 plugins/
 node_modules/
-
-# project specific
-/www/js/external/
+www/
