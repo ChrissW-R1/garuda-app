@@ -1,0 +1,31 @@
+{
+  "name": "Garuda",
+  "version": "0.1.0",
+  "description": "A multi-protocol messenger app",
+  "author": "ChrissW-R1",
+  "contributors": [
+    "ChrissW-R1 <contact@ChrissW-R1.me> (http://ChrissW-R1.me)"
+  ],
+  "license": "Apache-2.0",
+  "main": "www/js/index.js",
+  "dependencies": {
+    "generate-cordova-assets": "^2.0.5"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-curl": "^2.2.1"
+  },
+  "engines": {
+    "node": "4.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ChrissW-R1/garuda-app.git"
+  },
+  "keywords": [
+    "Garuda",
+    "multi-protocol",
+    "messenger"
+  ]
+}

@@ -44,7 +44,13 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
+# Android Studio
+gen/
+
 # Apache Cordova
 platforms/
 plugins/
 node_modules/
+
+# project specific
+/www/js/external/
