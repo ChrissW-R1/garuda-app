@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="me.chrisswr1.garuda" version="0.1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+
+	<name>Garuda</name>
+	<description>A multi-protocol messenger app</description>
+	<author email="contact@ChrissW-R1.me" href="http://ChrissW-R1.me">ChrissW-R1</author>
+
+	<content src="index.html" />
+	<plugin name="cordova-plugin-whitelist" spec="1" />
+	<access origin="*" />
+
+	<preference name="IconSource" value="www/img/logo/garuda.svg"/>
+	<preference name="IconBackgroundColor" value="#eeeeee"/>
+	<hook type="after_prepare" src="node_modules/generate-cordova-assets/hook.js"/>
+</widget>
