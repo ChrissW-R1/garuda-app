@@ -37,7 +37,7 @@ module.exports = function (grunt) {
             },
         },
         less: {
-            production: {
+            main: {
                 options: {
                     paths: ['src/main/less'],
                     compress: true
@@ -52,10 +52,27 @@ module.exports = function (grunt) {
             }
         },
         uglify: {
-            target: {
+            main: {
                 src: 'src/main/js/**/*',
                 dest:
                     'www/js/garuda.js'
+            }
+        },
+        htmlmin: {
+            main: {
+                options: {
+                    removeComments: true,
+                    collapseWhitespace: true
+                },
+                files: [{
+                    expand: true,
+                    cwd: 'src/main/html',
+                    src: [
+                        '*.html',
+                        '*.htm'
+                    ],
+                    dest: 'www/'
+                }]
             }
         }
     });
@@ -65,12 +82,14 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-htmlmin');
 
     // Default task(s).
     grunt.registerTask('default', [
         'clean',
         'copy',
         'less',
-        'uglify'
+        'uglify',
+        'htmlmin'
     ]);
 };
