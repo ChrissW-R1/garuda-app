@@ -23,9 +23,15 @@ module.exports = function (grunt) {
                     },
                     {
                         expand: true,
-                        cwd: 'src/main',
-                        src: 'js/**',
-                        dest: 'www/'
+                        cwd: 'node_modules/jquery/dist/',
+                        src: 'jquery.min.js',
+                        dest: 'www/js/'
+                    },
+                    {
+                        expand: true,
+                        cwd: 'node_modules/vue/dist/',
+                        src: 'vue.min.js',
+                        dest: 'www/js/'
                     }
                 ],
             },
@@ -36,16 +42,21 @@ module.exports = function (grunt) {
                     paths: ['src/main/less'],
                     compress: true
                 },
-                files: {
-                    'www/css/garuda.css': 'src/main/less/garuda.less'
-                }
+                files: [{
+                    expand: true,
+                    cwd: 'src/main/less',
+                    src: ['*.less'],
+                    dest: 'www/css/',
+                    ext: '.css'
+                }]
             }
         },
-        'curl-dir': {
-            'www/js': [
-                'https://vuejs.org/js/vue.min.js',
-                'https://code.jquery.com/jquery-3.2.1.min.js'
-            ]
+        uglify: {
+            target: {
+                src: 'src/main/js/**/*',
+                dest:
+                    'www/js/garuda.js'
+            }
         }
     });
 
@@ -53,16 +64,13 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-less');
-    grunt.loadNpmTasks('grunt-curl');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
 
     // Default task(s).
-    grunt.registerTask('offline', [
+    grunt.registerTask('default', [
         'clean',
         'copy',
-        'less'
-    ])
-    grunt.registerTask('default', [
-        'offline',
-        'curl-dir'
+        'less',
+        'uglify'
     ]);
 };

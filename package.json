@@ -9,6 +9,8 @@
   "license": "Apache-2.0",
   "main": "www/js/index.js",
   "dependencies": {
+    "jquery": "^3.2.1",
+    "vue": "^2.4.4",
     "generate-cordova-assets": "^2.0.5"
   },
   "devDependencies": {
@@ -16,7 +18,7 @@
     "grunt-contrib-clean": "^1.1.0",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-less": "^1.4.1",
-    "grunt-curl": "^2.2.1"
+    "grunt-contrib-uglify": "^3.1.0"
   },
   "engines": {
     "node": "4.0.0"
